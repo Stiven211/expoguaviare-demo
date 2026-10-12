@@ -1,30 +1,25 @@
 {
-  "version": "1.0",
-  "target": "expoguaviare-demo feria",
+  "version": "2.0",
+  "target": "Demo stand Expoguaviare - campesinos y tiendas San Jose del Guaviare",
+  "pattern": "Hero breve + Bento/tabs 4 modulos + Como probarlo en 30s",
+  "style": "Editorial calido + Clean",
   "colors": {
-    "primary": "#1B7A3D",
-    "primary-dark": "#145C2E",
+    "primary": "#1B5E20",
+    "primary-dark": "#124217",
     "secondary": "#6B4A2B",
-    "cta": "#F2A007",
-    "cta-dark": "#C67F00",
-    "bg": "#FFF8ED",
+    "cta": "#E67E22",
+    "cta-dark": "#C25E0E",
+    "bg": "#FFFBF5",
     "surface": "#FFFFFF",
-    "text": "#1E2A24",
-    "muted": "#5F6F65",
-    "border": "#E8DCC8",
-    "success": "#1B7A3D",
-    "warning": "#C65D21",
-    "danger": "#B3261E"
+    "text": "#2B1B12",
+    "muted": "#6E5D4E",
+    "border": "#EADDCB",
+    "success": "#1B5E20",
+    "warning-bg": "#FFF3E6",
+    "danger": "#C0392B"
   },
   "typography": {
     "heading": "Fraunces, Georgia, serif",
-    "body": "Inter, system-ui, -apple-system, sans-serif"
-  },
-  "spacing": { "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "6": "1.5rem", "8": "2rem" },
-  "radius": { "sm": "8px", "md": "14px", "lg": "22px" },
-  "shadows": {
-    "card": "0 4px 20px rgba(27,122,61,.08)",
-    "pop": "0 10px 32px rgba(27,122,61,.16)"
-  },
-  "breakpoints": { "sm": "640px", "md": "900px", "lg": "1200px" }
+    "body": "Karla, system-ui, sans-serif"
+  }
 }
