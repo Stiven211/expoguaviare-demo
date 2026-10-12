@@ -3,117 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guaviare Demo Feria — Mercado, Pinturas, Ganado y Caja</title>
-<meta name="description" content="4 herramientas para San José del Guaviare: mercado campesino, pinturas de Chiribiquete, control ganadero y caja para tiendas. Funciona sin internet.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<title>Guaviare — Mercado, Pinturas, Ganado y Caja</title>
+<meta name="description" content="4 herramientas para San José del Guaviare. Funciona sin internet.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top">
-<div class="top-in">
-<a class="logo" href="#"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21V12h6v9"/></svg></span><span><b>Guaviare · Demo feria</b><span>San José del Guaviare</span></span></a>
-<nav class="tabs" role="tablist" aria-label="Herramientas">
-<button role="tab" aria-selected="true" data-tab="mercado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Mercado</button>
-<button role="tab" aria-selected="false" data-tab="pinturas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>Pinturas</button>
-<button role="tab" aria-selected="false" data-tab="ganado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M6 12V6l6 6 6-6v6"/></svg>Ganado</button>
-<button role="tab" aria-selected="false" data-tab="caja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Caja tienda</button>
+<header class="nav">
+<div class="nav-in">
+<span class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Guaviare</span>
+<nav class="links" role="tablist" aria-label="Secciones">
+<button role="tab" aria-selected="true" data-tab="mercado">Mercado</button>
+<button role="tab" aria-selected="false" data-tab="pinturas">Pinturas</button>
+<button role="tab" aria-selected="false" data-tab="ganado">Ganado</button>
+<button role="tab" aria-selected="false" data-tab="caja">Caja</button>
 </nav>
-<span class="pill"><i></i>Funciona sin internet</span>
 </div>
 </header>
 
 <section class="hero">
-<div>
-<div class="pill">Para Expoguaviare · lista para el stand</div>
-<h1>4 herramientas para vender en San José</h1>
-<p class="lead">Sin tecnicismos. Cada una resuelve un problema real del Guaviare y se prueba en menos de un minuto frente al instructor.</p>
-<ul class="hero-list">
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 3H2"/></svg><span><b>Mercado:</b> el campesino publica yuca, cacao y asaí y vende sin intermediario.</span></li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span><b>Pinturas:</b> subes una foto de Chiribiquete y te cuenta su historia.</span></li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M6 12V6l6 6 6-6v6"/></svg><span><b>Ganado:</b> registras chapeta, peso y vacuna. Te avisa si está vencida.</span></li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Caja tienda:</b> cobras aunque se caiga el wifi, controlas fiados e inventario.</span></li>
-</ul>
+<div class="eyebrow">Expoguaviare · Demo para el stand</div>
+<h1>Todo lo que vende<br>San José del Guaviare.</h1>
+<p>Cuatro herramientas simples. Una para el campo, una para la cultura, una para el ganado y una para tu tienda.</p>
 <div class="cta-row">
-<button class="btn orange" data-goto="caja">Cobrar una venta ahora</button>
-<button class="btn ghost" data-goto="mercado">Ver mercado campesino</button>
+<button class="btn" data-goto="caja">Probar la caja</button>
+<button class="btn ghost" data-goto="mercado">Ver el mercado &#8594;</button>
 </div>
-</div>
-<aside class="how" aria-label="Guion para el instructor">
-<h3>Guion 3 minutos</h3>
-<ol>
-<li><b>Caja (1 min):</b> pon modo Sin wifi, cobra tinto + empanada, anota fiado a Don Marcos.</li>
-<li><b>Mercado (45s):</b> agrega cacao al carrito, genera pedido y muestra el QR.</li>
-<li><b>Ganado (45s):</b> registra G-042 con 420 kg y vacuna de hace 8 meses. Mira la alerta.</li>
-<li><b>Pinturas (30s):</b> sube una foto y lee la historia del Jaguar.</li>
-</ol>
-</aside>
 </section>
+
+<div class="bento" role="tablist" aria-label="Elige herramienta">
+<button role="tab" aria-selected="true" data-tab="mercado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg><b>Mercado</b><small>Yuca, cacao y asaí sin intermediario.</small></button>
+<button role="tab" aria-selected="false" data-tab="pinturas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/></svg><b>Pinturas</b><small>Chiribiquete contado en 10 segundos.</small></button>
+<button role="tab" aria-selected="false" data-tab="ganado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16V9l5 4 3-6 3 6 5-4v7"/><path d="M4 20h16"/></svg><b>Ganado</b><small>Chapeta, peso y vacunas al día.</small></button>
+<button role="tab" aria-selected="false" data-tab="caja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg><b>Caja</b><small>Cobra sin wifi. Fiados bajo control.</small></button>
+</div>
 
 <main class="main">
 
-<section class="card-panel active" id="panel-mercado" role="tabpanel" aria-label="Mercado campesino">
-<div class="panel-head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></div>
-<div><h2 style="margin:0">Mercado campesino</h2><p style="margin:4px 0;color:var(--muted)">Del cultivo al comprador, sin intermediario. Para feria y para WhatsApp después.</p></div></div>
-<div class="steps"><b>Pruébalo en 30 segundos</b><ol><li>Agrega 2 productos al carrito.</li><li>Pulsa Hacer pedido.</li><li>Muestra el QR al instructor como si fuera el stand.</li></ol></div>
+<section class="panel active" id="panel-mercado" role="tabpanel" aria-label="Mercado">
+<h2>Mercado campesino</h2>
+<p class="sub">Del cultivo a tu mesa.</p>
+<div class="steps"><b>En 30 segundos:</b><ol><li>Agrega 2 productos.</li><li>Haz el pedido.</li><li>Muestra el QR como en el stand.</li></ol></div>
 <div class="split"><div><div class="prods" id="mercadoGrid"></div></div>
-<aside class="side"><h3>Pedido</h3><ul id="cartList"><li><span>Vacío por ahora</span></li></ul><div class="tot" id="cartTotal">$0</div>
-<div class="cta-row"><button class="btn orange" id="checkoutBtn" style="flex:1">Hacer pedido</button><button class="btn ghost" id="clearCart">Vaciar</button></div>
+<aside class="side"><h3>Tu pedido</h3><ul id="cartList"><li><span>Vacío por ahora</span></li></ul><div class="tot" id="cartTotal">$0</div>
+<div class="cta-row" style="justify-content:flex-start"><button class="btn" id="checkoutBtn">Hacer pedido</button><button class="btn ghost" id="clearCart">Vaciar</button></div>
 <div class="ticket" id="orderBox" hidden><b id="orderTitle"></b><canvas id="orderQR" width="120" height="120"></canvas><small id="orderDetail"></small></div>
 </aside></div>
 </section>
 
-<section class="card-panel" id="panel-pinturas" role="tabpanel" aria-label="Pinturas de Chiribiquete">
-<div class="panel-head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-<div><h2 style="margin:0">Pinturas de Chiribiquete</h2><p style="margin:4px 0;color:var(--muted)">Turismo y cultura. La foto se convierte en historia contada.</p></div></div>
-<div class="steps"><b>Pruébalo en 30 segundos</b><ol><li>Sube cualquier foto desde tu celular.</li><li>Pulsa Contar historia.</li><li>Lee en voz alta el resultado para el instructor.</li></ol></div>
+<section class="panel" id="panel-pinturas" role="tabpanel" aria-label="Pinturas">
+<h2>Pinturas de Chiribiquete</h2>
+<p class="sub">Una foto. Una historia.</p>
+<div class="steps"><b>En 30 segundos:</b><ol><li>Sube una foto.</li><li>Pulsa Contar historia.</li><li>Léela en voz alta.</li></ol></div>
 <div class="split"><div>
-<label class="field"><span>1. Sube la foto de la pintura</span><input type="file" id="fotoInput" accept="image/*"><span class="err" id="fotoErr">Sube una foto primero para continuar.</span></label>
-<img class="imgbox" id="fotoPrev" alt="Vista previa de la pintura rupestre" width="640" height="360">
-<div class="cta-row"><button class="btn" id="analizarBtn">Contar historia</button></div>
+<label class="field"><span>Foto de la pintura</span><input type="file" id="fotoInput" accept="image/*"><span class="err" id="fotoErr">Sube una foto primero.</span></label>
+<img class="imgbox" id="fotoPrev" alt="Vista previa de pintura rupestre" width="640" height="360">
+<div class="cta-row" style="justify-content:flex-start"><button class="btn" id="analizarBtn">Contar historia</button></div>
 <div id="historiaBox"></div>
 </div>
-<aside class="side"><h3>En el stand</h3><p>Imprime 3 fotos grandes. El visitante sube la foto y la app narra. Ideal para colegios y turismo.</p><div class="notice" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff">Dato real: con 30 fotos por figura se entrena en 1 día.</div></aside></div>
+<aside class="side"><h3>En el stand</h3><p style="color:var(--muted)">Imprime 3 fotos grandes. El visitante sube una y la app narra.</p></aside></div>
 </section>
 
-<section class="card-panel" id="panel-ganado" role="tabpanel" aria-label="Control ganadero">
-<div class="panel-head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M6 12V6l6 6 6-6v6"/></svg></div>
-<div><h2 style="margin:0">Control ganadero</h2><p style="margin:4px 0;color:var(--muted)">Chapeta, peso y vacunas. Para la feria ganadera de Expoguaviare.</p></div></div>
-<div class="steps"><b>Pruébalo en 30 segundos</b><ol><li>Escribe chapeta G-042 y peso 420.</li><li>Pon vacuna Aftosa de hace 8 meses.</li><li>Guarda y mira la alerta roja.</li></ol></div>
+<section class="panel" id="panel-ganado" role="tabpanel" aria-label="Ganado">
+<h2>Control ganadero</h2>
+<p class="sub">Cada animal, bajo control.</p>
+<div class="steps"><b>En 30 segundos:</b><ol><li>Chapeta G-042, 420 kg.</li><li>Vacuna de hace 8 meses.</li><li>Guarda y mira la alerta.</li></ol></div>
 <div class="split"><div>
 <form id="ganadoForm" novalidate>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<label class="field"><span>Chapeta</span><input id="gChapeta" placeholder="Ejemplo: G-042"><span class="err" id="eChapeta">Escribe la chapeta.</span></label>
-<label class="field"><span>Nombre (opcional)</span><input id="gNombre" placeholder="Ejemplo: Lucera"></label>
+<label class="field"><span>Chapeta</span><input id="gChapeta" placeholder="G-042"><span class="err" id="eChapeta">Escribe la chapeta.</span></label>
+<label class="field"><span>Nombre (opcional)</span><input id="gNombre" placeholder="Lucera"></label>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-<label class="field"><span>Peso en kg</span><input id="gPeso" type="number" min="50" placeholder="420"><span class="err" id="ePeso">Peso mínimo 50 kg.</span></label>
+<label class="field"><span>Peso kg</span><input id="gPeso" type="number" min="50" placeholder="420"><span class="err" id="ePeso">Mínimo 50 kg.</span></label>
 <label class="field"><span>Vacuna</span><input id="gVacuna" value="Aftosa"></label>
-<label class="field"><span>Fecha vacuna</span><input id="gFecha" type="date"></label>
+<label class="field"><span>Fecha</span><input id="gFecha" type="date"></label>
 </div>
-<button class="btn" type="submit">Guardar animal</button>
+<button class="btn" type="submit">Guardar</button>
 </form>
-<table aria-label="Animales registrados"><thead><tr><th>Animal</th><th>Peso</th><th>Vacuna</th><th>Estado</th></tr></thead><tbody id="ganadoBody"></tbody></table>
+<table aria-label="Animales"><thead><tr><th>Animal</th><th>Peso</th><th>Vacuna</th><th>Estado</th></tr></thead><tbody id="ganadoBody"></tbody></table>
 </div>
-<aside class="side"><h3>Alertas</h3><div id="ganadoAlerts">Aún no hay animales. Registra el primero.</div></aside></div>
+<aside class="side"><h3>Estado del hato</h3><div id="ganadoAlerts">Registra el primer animal.</div></aside></div>
 </section>
 
-<section class="card-panel" id="panel-caja" role="tabpanel" aria-label="Caja para tienda">
-<div class="panel-head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-<div><h2 style="margin:0">Caja para tienda, billar o café</h2><p style="margin:4px 0;color:var(--muted)">Sigue vendiendo aunque se caiga el internet. Fiados anotados, nada en cuadernos.</p></div></div>
-<div class="steps"><b>Pruébalo en 30 segundos</b><ol><li>Cambia a Sin wifi.</li><li>Cobra un tinto.</li><li>Anótalo como fiado a Don Marcos y muestra el ticket.</li></ol></div>
-<label class="field" style="max-width:300px"><span>Conexión del local</span><select id="modoRed"><option value="con">Con internet</option><option value="sin">Sin wifi (feria)</option></select></label>
+<section class="panel" id="panel-caja" role="tabpanel" aria-label="Caja">
+<h2>Caja para tu negocio</h2>
+<p class="sub">Vende aunque se caiga el wifi.</p>
+<div class="steps"><b>En 30 segundos:</b><ol><li>Cambia a Sin wifi.</li><li>Suma un tinto.</li><li>Cobra como fiado a Don Marcos.</li></ol></div>
+<label class="field" style="max-width:300px"><span>Conexión</span><select id="modoRed"><option value="con">Con internet</option><option value="sin">Sin wifi</option></select></label>
 <div class="split"><div><div class="prods" id="cajaGrid"></div></div>
-<aside class="side"><h3>Cuenta actual</h3><ul id="cuentaList"><li><span>Vacía</span></li></ul><div class="tot" id="cuentaTotal">$0</div>
-<label class="field" style="margin-top:10px"><span style="color:#fff">Fiado a (opcional)</span><input id="fiadoNombre" placeholder="Ejemplo: Don Marcos"></label>
-<div class="cta-row"><button class="btn orange" id="cobrarBtn" style="flex:1">Cobrar</button><button class="btn ghost" id="anularBtn">Anular</button></div>
+<aside class="side"><h3>Cuenta</h3><ul id="cuentaList"><li><span>Vacía</span></li></ul><div class="tot" id="cuentaTotal">$0</div>
+<label class="field" style="margin-top:10px"><span>Fiado a (opcional)</span><input id="fiadoNombre" placeholder="Don Marcos"></label>
+<div class="cta-row" style="justify-content:flex-start"><button class="btn" id="cobrarBtn">Cobrar</button><button class="btn ghost" id="anularBtn">Anular</button></div>
 <div class="ticket" id="ticketBox" hidden></div>
-<h3 style="margin-top:14px">Fiados pendientes</h3><ul id="fiadosList"><li><span>Ninguno. Todo al día.</span></li></ul>
+<h3 style="margin-top:14px">Fiados</h3><ul id="fiadosList"><li><span>Ninguno.</span></li></ul>
 </aside></div>
 </section>
 
+<div class="guion"><h3>Guion 3 minutos para el instructor</h3><ol><li><b>Caja:</b> sin wifi, cobra tinto + empanada, fiado a Don Marcos.</li><li><b>Mercado:</b> cacao al carrito, pedido, QR.</li><li><b>Ganado:</b> G-042, 420 kg, vacuna hace 8 meses, alerta.</li><li><b>Pinturas:</b> sube foto, historia del Jaguar.</li></ol></div>
+
 </main>
-<footer>Hecho para Expoguaviare · Mercado + Pinturas + Ganado + Caja · Guárdalo y preséntalo sin internet</footer>
+<footer>Guaviare · Demo Expoguaviare · Funciona sin internet</footer>
 <script src="app.js"></script>
 </body>
 </html>

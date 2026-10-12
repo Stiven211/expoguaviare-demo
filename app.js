@@ -2,15 +2,17 @@
 const $ = s => document.querySelector(s);
 const fmt = n => '$' + n.toLocaleString('es-CO');
 
-// Tabs
-document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', 'false'));
-  b.setAttribute('aria-selected', 'true');
-  document.querySelectorAll('.card-panel').forEach(p => p.classList.remove('active'));
-  $('#panel-' + b.dataset.tab).classList.add('active');
-}));
+// Tabs (nav superior + bento estilo Apple)
+const tabBtns = document.querySelectorAll('[data-tab]');
+function goTab(name) {
+  document.querySelectorAll('[data-tab]').forEach(x => x.setAttribute('aria-selected', 'false'));
+  document.querySelectorAll('[data-tab="' + name + '"]').forEach(x => x.setAttribute('aria-selected', 'true'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  $('#panel-' + name).classList.add('active');
+}
+tabBtns.forEach(b => b.addEventListener('click', () => goTab(b.dataset.tab)));
 document.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => {
-  document.querySelector('.tabs button[data-tab="' + b.dataset.goto + '"]').click();
+  goTab(b.dataset.goto);
   document.querySelector('.main').scrollIntoView({ behavior: 'smooth' });
 }));
 
@@ -32,12 +34,12 @@ function drawQR(canvas, text) {
 
 // --- MERCADO ---
 const MERCADO = [
-  { id: 'yuca', ini: 'Y', col: '#1B5E20', n: 'Yuca fresca', d: 'Finca El Retorno · bolsa 1 kg', p: 2500 },
-  { id: 'cacao', ini: 'C', col: '#6B4A2B', n: 'Cacao', d: 'Asoproagro · 500 g', p: 18000 },
-  { id: 'asai', ini: 'A', col: '#5B2D8E', n: 'Asaí', d: 'Pulpa congelada · 1 L', p: 15000 },
-  { id: 'cafe', ini: 'F', col: '#8A4A0B', n: 'Café Serranía', d: 'Tostado medio · 500 g', p: 22000 },
-  { id: 'miel', ini: 'M', col: '#C25E0E', n: 'Miel de monte', d: 'Artesanal · 750 ml', p: 25000 },
-  { id: 'platano', ini: 'P', col: '#2E7D32', n: 'Plátano hartón', d: 'Docena', p: 8000 },
+  { id: 'yuca', ini: 'Y', col: '#1d1d1f', n: 'Yuca fresca', d: 'Finca El Retorno · bolsa 1 kg', p: 2500 },
+  { id: 'cacao', ini: 'C', col: '#6e6e73', n: 'Cacao', d: 'Asoproagro · 500 g', p: 18000 },
+  { id: 'asai', ini: 'A', col: '#0071e3', n: 'Asaí', d: 'Pulpa congelada · 1 L', p: 15000 },
+  { id: 'cafe', ini: 'F', col: '#3a3a3c', n: 'Café Serranía', d: 'Tostado medio · 500 g', p: 22000 },
+  { id: 'miel', ini: 'M', col: '#a2845e', n: 'Miel de monte', d: 'Artesanal · 750 ml', p: 25000 },
+  { id: 'platano', ini: 'P', col: '#1b5e20', n: 'Plátano hartón', d: 'Docena', p: 8000 },
 ];
 let carrito = [];
 function pintarMercado() {
@@ -111,10 +113,10 @@ pintarHato();
 
 // --- CAJA ---
 const CAJA = [
-  { id: 'tinto', ini: 'T', col: '#6B4A2B', n: 'Tinto', p: 1500 },
-  { id: 'emp', ini: 'E', col: '#C25E0E', n: 'Empanada', p: 3000 },
-  { id: 'gas', ini: 'G', col: '#1B5E20', n: 'Gaseosa', p: 3500 },
-  { id: 'bil', ini: 'B', col: '#2B1B12', n: 'Hora de billar', p: 10000 },
+  { id: 'tinto', ini: 'T', col: '#1d1d1f', n: 'Tinto', p: 1500 },
+  { id: 'emp', ini: 'E', col: '#6e6e73', n: 'Empanada', p: 3000 },
+  { id: 'gas', ini: 'G', col: '#0071e3', n: 'Gaseosa', p: 3500 },
+  { id: 'bil', ini: 'B', col: '#3a3a3c', n: 'Hora de billar', p: 10000 },
 ];
 let cuenta = [], fiados = JSON.parse(localStorage.getItem('fiados') || '[]');
 function pintarCaja() {
