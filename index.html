@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expoguaviare Demo — 4 módulos</title>
+<meta name="description" content="Demo funcional offline: AgroMarket, IA Rupestre, Control Ganadero, PuntoGo POS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">G</div>
+      <div><b>Expoguaviare · Demo feria</b><small>4 ideas · 100% offline · sin build</small></div>
+    </div>
+    <nav class="nav" role="tablist" aria-label="Módulos">
+      <button role="tab" aria-selected="true" data-tab="agro">2 · AgroMarket</button>
+      <button role="tab" aria-selected="false" data-tab="ia">3 · IA Rupestre</button>
+      <button role="tab" aria-selected="false" data-tab="ganado">4 · Ganadero</button>
+      <button role="tab" aria-selected="false" data-tab="punto">1· PuntoGo POS</button>
+    </nav>
+    <span class="badge-offline" id="netBadge">OFFLINE READY</span>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Vende en el stand, impresiona al instructor.</h1>
+  <p>Demo estática y funcional. Datos en <b>localStorage</b>, funciona con doble clic en <b>index.html</b> o con <b>python -m http.server</b>. Sin internet después de cargar. Lleva QR al stand.</p>
+  <div class="hero-actions">
+    <button class="btn cta" data-goto="punto">Cobrar en vivo con PuntoGo</button>
+    <button class="btn secondary" data-goto="ia">Probar IA Rupestre</button>
+  </div>
+</section>
+
+<div class="wrap">
+
+<!-- 2 AGROMARKET -->
+<section class="panel active" id="panel-agro" role="tabpanel">
+  <h2>AgroMarket Guaviare <span class="tag">img1 · #2</span></h2>
+  <p class="sub">Campesinos publican yuca, cacao, asaí sin intermediario. Carrito + pago simulado + QR del pedido para el stand.</p>
+  <div class="grid2">
+    <div><div class="cards" id="agroGrid"></div></div>
+    <aside class="cart" aria-live="polite">
+      <h3>Carrito</h3>
+      <ul id="cartList"><li>Vacío — agrega del catálogo</li></ul>
+      <div class="total" id="cartTotal">$0</div>
+      <div class="row" style="margin-top:.6rem">
+        <button class="btn cta" id="checkoutBtn" style="flex:1">Pagar (simulado)</button>
+        <button class="btn secondary" id="clearCart" style="color:#111">Vaciar</button>
+      </div>
+      <div class="qrbox" id="agroQR" hidden>
+        <b>Pedido <span id="orderId"></span></b>
+        <div class="qr-fake" aria-hidden="true">||||||||||||||||</div>
+        <small id="orderDetail"></small><br>
+        <small>Muestra este QR en el stand</small>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- 3 IA RUPESTRE -->
+<section class="panel" id="panel-ia" role="tabpanel">
+  <h2>IA Rupestre <span class="tag">img1 · #3</span></h2>
+  <p class="sub">Con la cámara reconoce fotos de Chiribiquete y cuenta la historia. Demo con Teachable-Machine simulado (1 día de montaje real).</p>
+  <div class="grid2">
+    <div>
+      <label>Foto de pintura rupestre<input type="file" id="iaFile" accept="image/*"></label>
+      <img class="preview" id="iaPreview" alt="Vista previa de pintura rupestre">
+      <div class="row" style="margin-top:.6rem">
+        <button class="btn" id="iaBtn">Analizar con IA</button>
+      </div>
+      <div id="iaResult" style="margin-top:.8rem"></div>
+    </div>
+    <aside class="cart"><h3>¿Qué mostras en feria?</h3><p style="color:#cfe6d5">3 fotos impresas en el stand. El visitante apunta / sube foto y la app narra la historia. Deja a todos locos.</p><div class="alert" style="color:#111">Tip instructor: Teachable Machine + 30 fotos por clase = 85%+ precisión.</div></aside>
+  </div>
+</section>
+
+<!-- 4 GANADERO -->
+<section class="panel" id="panel-ganado" role="tabpanel">
+  <h2>Control Ganadero Inteligente <span class="tag">img1 · #4</span></h2>
+  <p class="sub">Registro con chapeta QR, vacunas, peso y alertas. Perfecto para feria ganadera Expoguaviare.</p>
+  <div class="grid2">
+    <div>
+      <form id="ganadoForm">
+        <div class="row">
+          <label style="flex:1">Chapeta / QR<input id="gChapeta" required placeholder="Ej: G-042"></label>
+          <label style="flex:1">Nombre<input id="gNombre" placeholder="Ej: Lucera"></label>
+        </div>
+        <div class="row">
+          <label style="flex:1">Peso kg<input id="gPeso" type="number" min="1" required placeholder="420"></label>
+          <label style="flex:1">Vacuna<input id="gVacuna" placeholder="Aftosa"></label>
+          <label style="flex:1">Fecha vacuna<input id="gFecha" type="date"></label>
+        </div>
+        <button class="btn" type="submit">Registrar animal</button>
+      </form>
+      <table aria-label="Ganado registrado"><thead><tr><th>Chapeta</th><th>Peso</th><th>Vacuna</th><th>Estado</th></tr></thead><tbody id="ganadoBody"></tbody></table>
+    </div>
+    <aside class="cart"><h3>Alertas</h3><div id="ganadoAlerts"><p style="color:#cfe6d5">Sin alertas todavía.</p></div></aside>
+  </div>
+</section>
+
+<!-- 1 PUNTOGO -->
+<section class="panel" id="panel-punto" role="tabpanel">
+  <h2>PuntoGo Guaviare <span class="tag">img2 · #1 · recomendación venta</span></h2>
+  <p class="sub">POS offline para tiendas, billares y cafés: vende con o sin internet, inventario, fiados y ticket QR. Pruébalo vendiendo de verdad.</p>
+  <label style="max-width:280px">Modo conexión <select id="netMode"><option value="online">Online</option><option value="offline">Offline (feria sin wifi)</option></select></label>
+  <div class="grid2">
+    <div><div class="cards" id="posGrid"></div></div>
+    <aside class="cart">
+      <h3>Ticket actual</h3>
+      <ul id="posList"><li>Vacío</li></ul>
+      <div class="total" id="posTotal">$0</div>
+      <label style="margin-top:.5rem;color:#fff">Fiado a (opcional)<input id="fiadoName" placeholder="Ej: Don Marcos"></label>
+      <div class="row">
+        <button class="btn cta" id="cobrarBtn" style="flex:1">Cobrar</button>
+        <button class="btn secondary" id="posClear" style="color:#111">Anular</button>
+      </div>
+      <div class="ticket" id="ticketBox" hidden></div>
+      <h3 style="margin-top:1rem">Fiados</h3><ul id="fiadosList"><li>Sin fiados</li></ul>
+    </aside>
+  </div>
+</section>
+
+</div>
+</main>
+<footer>Expoguaviare demo · AgroMarket + IA Rupestre + Ganadero + PuntoGo · hecho para presentar en stand con QR</footer>
+<script src="app.js"></script>
+</body>
+</html>
